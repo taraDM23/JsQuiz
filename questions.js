@@ -1,33 +1,32 @@
-(function () {
-    var allQuestions = [{
-        title: "Question 1:",
-        choice: ["A", "B", "C", "D"],
+(function() 
+ {
+var allQuestions = [{
+        question: "Question 1:",
+        option: ["A", "B", "C", "D"],
         answer: 2
     }, {
-        title: "Question 2:",
-        choice: ["AA", "BB", "CC", "DD"],
+        question: "Question 2:",
+        option: ["AA", "BB", "CC", "DD"],
         answer: 3
     }, {
-        title: "Question 3:",
-        choice: ["ping", "pong", "bong", "bing"],
+        question: "Question 3:",
+        option: ["ping", "pong", "bong", "bing"],
         answer: 1
     }, {
-        title: "Question 4:",
-        choice: ["mew", "mewmew", "pew", "pew pew"],
+        question: "Question 4:",
+        option: ["mew", "mewmew", "pew", "pew pew"],
         answer: 0
     }, {
-        title: "Question 5:",
-        choice: ["fa", "la", "lala", "la"],
+        question: "Question 5:",
+        option: ["fa", "la", "lala", "la"],
         answer: 1
     }, {
-        title: "Question 6:",
-        choice: ["pew", "pewpew", "pew pew pew", "pewx4"],
+        question: "Question 6:",
+        option: ["pew", "pewpew", "pew pew pew", "pewx4"],
         answer: 0
     }, {
-        title: "Question 7:",
-        choice: ["potatp", "tomato", "woof", "moo"],
+        question: "Question 7:",
+        option: ["potatp", "tomato", "woof", "moo"],
         answer: 0
-    }
-    ]
-},
-});
+    }];
+})

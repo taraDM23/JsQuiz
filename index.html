@@ -8,32 +8,32 @@
     <link rel='icon' href="" type='image/x-icon' />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>JS Quiz</title>
 </head>
+<nav class=row>
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <h4 id=highscore>
+            Reveiw Highscore
+        </h4>
+    </div>
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+    <h4 id=Timer>
+        Time left:
+    </h4>
+</div>
+</nav>
+<section id="container">
+    <h2>Coding Quiz Challenge</h2>
+    <div id="submit" onclick="">Start</div>
+    <div id="quiz"></div>
+    <br />
+    <br />
+</section>
 
-<div class="btn-group-toggle" data-toggle="buttons">
-    <label class="btn btn-secondary active">
-      <input type="checkbox" checked autocomplete="off"> Checked
-    </label>
-  </div>
-  <div class="btn-group-toggle" data-toggle="buttons">
-    <label class="btn btn-secondary active">
-      <input type="checkbox" checked autocomplete="off"> Checked
-    </label>
-  </div>
-  <div class="btn-group-toggle" data-toggle="buttons">
-    <label class="btn btn-secondary active">
-      <input type="checkbox" checked autocomplete="off"> Checked
-    </label>
-  </div>
-  <div class="btn-group-toggle" data-toggle="buttons">
-    <label class="btn btn-secondary active">
-      <input type="checkbox" checked autocomplete="off"> Checked
-    </label>
-  </div>
-<script></script>
-<script></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="questions.js"></script>
+<script type="text/javascript" src="script.js"></script>
 </body>
 
 </html>
