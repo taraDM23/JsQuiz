@@ -1,5 +1,5 @@
-(function() 
- {
+(function ()
+{
 var allQuestions = [{
         question: "Question 1:",
         option: ["A", "B", "C", "D"],
@@ -28,5 +28,6 @@ var allQuestions = [{
         question: "Question 7:",
         option: ["potatp", "tomato", "woof", "moo"],
         answer: 0
-    }];
+        
+    }]
 })

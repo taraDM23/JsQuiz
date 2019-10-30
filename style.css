@@ -8,8 +8,11 @@ margin-right: auto;
 width: 100%;
 background-color: bisque;
 border: 1px black solid;
+padding-left: 10px;
 }
 
 #submit {
-margin-left: 10px;
+
 }
+
+
