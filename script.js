@@ -1,91 +1,63 @@
-
+// select all elements
 const start = document.getElementById("start");
 const quiz = document.getElementById("quiz");
+const question = document.getElementById("question");
+const choiceA = document.getElementById("A");
+const choiceB = document.getElementById("B");
+const choiceC = document.getElementById("C");
+const choiceD = document.getElementById("D");
 const counter = document.getElementById("counter");
+const header = document.getElementById("header");
+const intro = document.getElementById("intro");
 
-var questions = [
-    {
-        title: "Question 1 Whats the best fruit?",
-        option: ["Apple", "Ball", "Cat", "Dog"],
-        answer: 1
-    },
-    {
-        title: "Question 2 muhahahaah:",
-        option: ["AA", "BB", "CC", "DD"],
-        answer: 3
-    },
-    {
-        title: "Question 3 all the silly:",
-        option: ["ping", "pong", "bong", "bing"],
-        answer: 0
-    }
-]
-
-const lastQuestion = questions.length - 1;
-let LoadQuestion = 0;
-const questionTime = 15;
-let TIMER;
-var timeleft = 75;
-let score = 0;
-let q = questions[LoadQuestion];
-var selectOptions = [];
-
-function showQuestion() {
-    var body = document.getElementById("quiz");
-
-    //create elements
-    var Title = document.createElement("div");
-    var listEl = document.createElement("ol");
-    var li1 = document.createElement("li");
-    var li2 = document.createElement("li");
-    var li3 = document.createElement("li");
-    var li4 = document.createElement("li");
-
-    //show via array
-
-    Title.innerHTML = "<p>" + q.title + "</p>";
-    li1.innerHTML = q.option[0];
-    li2.innerHTML = q.option[1];
-    li3.innerHTML = q.option[2];
-    li4.innerHTML = q.option[3];
-
-    body.appendChild(Title);
-    Title.appendChild(listEl);
-    listEl.appendChild(li1);
-    listEl.appendChild(li2);
-    listEl.appendChild(li3);
-    listEl.appendChild(li4);
-
-    li1.addEventListener("click", checkAnswer())
-    li2.addEventListener("click", checkAnswer())
-    li3.addEventListener("click", checkAnswer())
-    li4.addEventListener("click", checkAnswer())
-
-    function checkAnswer() {
-        for (var i = 0; i < questions.length; i++) {
-            if (response == questions[i].answer) {
-                score++;
-                alert("Correct!");
-            } else {
-                alert("WRONG!");
-            }
-        }
-    }
-}
+var questions = [{
+    question: "Question 1: Why is this so hard:",
+    option: ["1: ping", "2: pong", "3: paddle", "4: pool"],
+    correct: 0
+}, {
+    question: "Question 2: I wish I had a lot of money",
+    option: ["1: why!!?", "2: so poor", "3: need", "4: money"],
+    correct: 3
+}, {
+    question: "Question 3: No no no no no no no",
+    option: ["1: stick", "2: to the", "3: stUff you", "4: know"],
+    correct: 1
+}, {
+    question: "Question 4: Potatos are awesome",
+    option: ["1: chips", "2: mashed", "3: wedges", "4: roast"],
+    correct: 1
+}, {
+    question: "Question 5: What are JavaScript Cookies?",
+    option: ["1: js stored in a computer when the user visits the websites to store information", "2: Cookies made with flour, eggs and HTML", "3: Chocolate", "4: Test files stored in a computer when the user visits the websites to store information"],
+    correct: 3
+}]
 
 start.addEventListener("click", startQuiz);
 
-// start quiz
 function startQuiz() {
     start.style.display = "none";
-    showQuestion();
-    setTime();
+
+    renderQuestion();
     quiz.style.display = "block";
-    //checkAnswer(q.answer);
-    //renderCounter();
-    //TIMER = setInterval(renderCounter, 1000);
+    header.style.display = "none";
+    intro.style.display = "none";
+    renderCounter();
+    setTime();
+    displayResult()
+    TIMER = setInterval(renderCounter, 1000); // 1000ms = 1s
+
 }
 
+let runningQuestion = 0;
+let count = 0;
+const questionTime = 15;
+var timeleft = 75;
+let score = 0;
+let TIMER;
+var lastQuestion = questions.length - 1;
+var selectOptions = [];
+
+// Start timer
 function setTime() {
 
     setInterval(function function1() {
@@ -97,6 +69,56 @@ function setTime() {
 };
 
 
+// render a question
+function renderQuestion() {
+    let q = questions[runningQuestion];
+
+    question.innerHTML = "<p>" + q.question + "</p>";
+    choiceA.innerHTML = q.option[0];
+    choiceB.innerHTML = q.option[1];
+    choiceC.innerHTML = q.option[2];
+    choiceD.innerHTML = q.option[3];
+}
+
+// counter render
+function renderCounter() {
+    if (count <= questionTime) {
+        counter.innerHTML = count;
+        count++
+    } else {
+        count = 0;
+        // change progress color to red
+        answerIsWrong();
+        if (runningQuestion < lastQuestion) {
+            runningQuestion++;
+            renderQuestion();
+        } else {
+            // end the quiz and show the score
+            clearInterval(TIMER);
+            scoreRender();
+        }
+    }
+}
+
+// checkAnwer
+function checkAnswer(answer) {
+    if (answer == questions[runningQuestion].correct) {
+        // answer is correct
+        score++;
+
+    } else {
+        // answer is wrong
+    }
+    count = 0;
+    if (runningQuestion < lastQuestion) {
+        runningQuestion++;
+        renderQuestion();
+    } else {
+        // end the quiz and show the score
+        clearInterval(TIMER);
+        scoreRender();
+    }
+}
 
 /*
 Home screen  Submit button - on click event
