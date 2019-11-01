@@ -139,8 +139,23 @@ submit_initial.addEventListener("click", function(store) {
 localStorage.setItem("store", JSON.stringify(store));
 
 // get stored data
+const ul = document.querySelector('ul');
 
+const makeli = (store) => {
+    const li = document.createElement('li');
+    li.textContent = store;
+    ul.appendChild(li);
+}
 
+itemsArray.push(input.value);
+localStorage.setItem('items', JSON.stringify(itemsArray));
+liMaker(input.value);
+input.value = "";
+
+data.forEach(item => {
+    liMaker(item);
+    console.log(store)
+});
 
 //Go to Home
 //location.reload()
