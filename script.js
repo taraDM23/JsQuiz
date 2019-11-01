@@ -118,19 +118,35 @@ function checkAnswer(answer) {
 
 function Rendermodal() {
     var modal = document.getElementById("ShowScore");
-    var span = document.getElementsByClassName("close")[0];
     modal.style.display = "block";
     score = document.getElementById("score");
     score.innerHTML = timeleft;
     console.log(timeleft);
 }
 
-/* 
-function answerIsWrong() {
-if(questionTime = 0)
+//submit score and initial to local storage
+const submit_initial = document.getElementById("submit_initial")
+const id_initial = document.getElementById("initial")
+score = document.getElementById("score")
+
+submit_initial.addEventListener("click", function(store) {
+    var store = {
+        initial: id_initial.value.trim(),
+        score: score.innerHTML = timeleft
+    }
+    console.log(store)
+})
+localStorage.setItem("store", JSON.stringify(store));
+
+// get stored data
 
 
-scoreRender(); */
+
+//Go to Home
+//location.reload()
+
+
+//view highscore
 
 /*
 Home screen  Submit button - on click event
