@@ -43,14 +43,14 @@ function startQuiz() {
     intro.style.display = "none";
     renderCounter();
     setTime();
-    displayResult()
+    //displayResult()
     TIMER = setInterval(renderCounter, 1000); // 1000ms = 1s
 
 }
 
 let runningQuestion = 0;
 let count = 0;
-const questionTime = 15;
+const questionTime = 10;
 var timeleft = 75;
 let score = 0;
 let TIMER;
