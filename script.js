@@ -36,7 +36,6 @@ start.addEventListener("click", startQuiz);
 
 function startQuiz() {
     start.style.display = "none";
-
     renderQuestion();
     quiz.style.display = "block";
     header.style.display = "none";
@@ -45,7 +44,6 @@ function startQuiz() {
     setTime();
     //displayResult()
     TIMER = setInterval(renderCounter, 1000); // 1000ms = 1s
-
 }
 
 let runningQuestion = 0;
@@ -54,15 +52,16 @@ const questionTime = 10;
 var timeleft = 75;
 let score = 0;
 let TIMER;
+let maintimer;
 var lastQuestion = questions.length - 1;
 var selectOptions = [];
 
 // Start timer
 function setTime() {
 
-    setInterval(function function1() {
+    maintimer = setInterval(function function1() {
 
-        document.getElementById("Timer").innerHTML = "Time remaining: " + timeleft + " seconds";
+        document.getElementById("Timer").innerHTML = "Time: " + timeleft + " seconds";
         timeleft -= 1;
 
     }, 1000);
@@ -88,7 +87,7 @@ function renderCounter() {
     } else {
         count = 0;
         // change progress color to red
-        answerIsWrong();
+        //answerIsWrong();
         if (runningQuestion < lastQuestion) {
             runningQuestion++;
             renderQuestion();
@@ -102,12 +101,8 @@ function renderCounter() {
 
 // checkAnwer
 function checkAnswer(answer) {
-    if (answer == questions[runningQuestion].correct) {
-        // answer is correct
-        score++;
-
-    } else {
-        // answer is wrong
+    if (answer != questions[runningQuestion].correct) {
+        timeleft = timeleft - 10;
     }
     count = 0;
     if (runningQuestion < lastQuestion) {
@@ -115,10 +110,27 @@ function checkAnswer(answer) {
         renderQuestion();
     } else {
         // end the quiz and show the score
+        clearInterval(maintimer);
         clearInterval(TIMER);
-        scoreRender();
+        Rendermodal();
     }
 }
+
+function Rendermodal() {
+    var modal = document.getElementById("ShowScore");
+    var span = document.getElementsByClassName("close")[0];
+    modal.style.display = "block";
+    score = document.getElementById("score");
+    score.innerHTML = timeleft;
+    console.log(timeleft);
+}
+
+/* 
+function answerIsWrong() {
+if(questionTime = 0)
+
+
+scoreRender(); */
 
 /*
 Home screen  Submit button - on click event
