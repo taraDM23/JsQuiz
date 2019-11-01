@@ -20,7 +20,7 @@ var questions = [{
     correct: 3
 }, {
     question: "Question 3: No no no no no no no",
-    option: ["1: stick", "2: to the", "3: stUff you", "4: know"],
+    option: ["1: stick", "2: to the", "3: stuff you", "4: know"],
     correct: 1
 }, {
     question: "Question 4: Potatos are awesome",

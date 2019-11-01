@@ -1,24 +1,30 @@
 body {
-    width: 70%;
-    height: 50%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
 }
 
 #container {
     width: 100%;
-    padding-left: 10px;
     padding-top: 10px;
     padding-bottom: 20px;
     text-align: center;
 }
 
 #start {
-    width: 106px;
     text-align: center;
     background-color: purple;
     color: white;
     padding: 2px;
-    margin-left: 30px;
+    border: 1px purple solid;
+}
+
+.choice {
+    width: 100%;
+    text-align: center;
+    background-color: purple;
+    color: white;
+    padding: 2px;
+    margin-top: 5px;
     border: 1px purple solid;
 }
