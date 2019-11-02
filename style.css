@@ -29,6 +29,15 @@ body {
     border: 1px purple solid;
 }
 
+#submit_initial {
+    text-align: center;
+    background-color: purple;
+    color: white;
+    padding: 2px;
+    margin-top: 5px;
+    border: 1px purple solid;
+}
+
 #nav {
     display: flex;
     flex-wrap: wrap;

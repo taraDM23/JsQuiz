@@ -14,7 +14,7 @@
 
     <nav class=row id="nav">
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center">
-            <h4 id=highscore src="highscore.html">Reveiw Highscores</h4>
+            <h4 id=highscore><a href="highscore.html">Highscore</a></h4>
         </div>
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center">
             <h4 id=Timer>Timer</h4>
@@ -33,10 +33,10 @@
             <br/>
             <div id="question"></div>
             <div id="choices">
-                <div class="choice" id="A" onclick="checkAnswer()">1. </div>
-                <div class="choice" id="B" onclick="checkAnswer()">2. </div>
-                <div class="choice" id="C" onclick="checkAnswer()">3. </div>
-                <div class="choice" id="D" onclick="checkAnswer()">4. </div>
+                <div class="choice" id="A" onclick="checkAnswer(0)">1. </div>
+                <div class="choice" id="B" onclick="checkAnswer(1)">2. </div>
+                <div class="choice" id="C" onclick="checkAnswer(2)">3. </div>
+                <div class="choice" id="D" onclick="checkAnswer(3)">4. </div>
             </div>
             <br/>
             <br/>
@@ -62,8 +62,10 @@
         </div>
     </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="questions.js"></script>
     <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
 </body>
 
 </html>
