@@ -1,71 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
     <title>Tara's Quiz</title>
-</head>
+  </head>
 
-<body>
-
-    <nav class=row id="nav">
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center">
-            <h4 id=highscore><a href="highscore.html">Highscore</a></h4>
-        </div>
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center">
-            <h4 id=Timer>Timer</h4>
-        </div>
+  <body>
+    <nav class="row" id="nav">
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center">
+        <h5 id="highscore"><a href="highscore.html">Highscore</a></h5>
+      </div>
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center">
+        <h5 id="Timer">Timer</h5>
+      </div>
     </nav>
     <div id="container">
-        <h4 id="header">Coding Quiz Challenge</h4>
-        <p id="intro">Answer these questions as fast as you can. The faster you are the higher the score. Remember if you get an answer wrong or take too long you will loose points! Good Luck!!</p>
-        <div class=row>
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center" id="start">
-                Start Quiz!
-            </div>
+      <br />
+      <br />
+      <h4 id="header">Coding Quiz Challenge</h4>
+      <br />
+      <p id="intro">
+        Answer these questions as fast as you can. The faster you are the higher
+        the score. Remember if you get an answer wrong or take too long you will
+        loose points! Good Luck!!
+      </p>
+      <br />
+      <br />
+      <div class="row">
+        <div
+          class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center"
+          id="start"
+        >
+          Start Quiz!
         </div>
-        <div id="quiz" style="display: none">
-            <br/>
-            <br/>
-            <div id="question"></div>
-            <div id="choices">
-                <div class="choice" id="A" onclick="checkAnswer(0)"> </div>
-                <div class="choice" id="B" onclick="checkAnswer(1)"> </div>
-                <div class="choice" id="C" onclick="checkAnswer(2)"> </div>
-                <div class="choice" id="D" onclick="checkAnswer(3)"> </div>
-            </div>
-            <br/>
-            <br/>
-            <div id="TIMER">seconds left to answer
-                <div id="counter"></div>
-            </div>
-            <div id="ShowScore" class="modal">
-                <div class="modal-content">
-                    <br/>
-                    <br/>
-                    <p>Your Score:</p>
-                    <p id="score"></p>
-                    <input type="text" id="initial" placeholder="Enter Initials">
-                    <input type="button" id="submit_initial" value="Submit" onclick="">
-                    <br/>
-                    <br/>
-                    <p>refresh button</p>
-                    <p>clear local storage button</p>
-                    <br/>
-                    <br/>
-                </div>
-            </div>
+      </div>
+      <div id="quiz" style="display: none">
+        <br />
+        <br />
+        <div id="question"></div>
+        <div id="choices">
+          <div class="choice" id="A" onclick="checkAnswer(0)"></div>
+          <div class="choice" id="B" onclick="checkAnswer(1)"></div>
+          <div class="choice" id="C" onclick="checkAnswer(2)"></div>
+          <div class="choice" id="D" onclick="checkAnswer(3)"></div>
         </div>
+        <br />
+        <br />
+        <div id="TIMER">
+          seconds left to answer
+          <div id="counter"></div>
+        </div>
+        <div id="ShowScore" class="modal">
+          <div class="modal-content">
+            <br />
+            <br />
+            <p>Your Score:</p>
+            <p id="score"></p>
+            <input type="text" id="initial" placeholder="Enter Initials" />
+            <input
+              type="button"
+              id="submit_initial"
+              value="Submit"
+              onclick=""
+            />
+            <br />
+            <br />
+             <!--
+            <p>refresh button</p>
+            <p>clear local storage button</p> -->
+            <br />
+            <br />
+          </div>
+        </div>
+      </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="questions.js"></script>
     <script src="script.js"></script>
-    
-    
-</body>
-
+  </body>
 </html>

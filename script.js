@@ -115,11 +115,12 @@ submit_initial.addEventListener("click", function (store) {
     console.log(storage)
   
     // get stored data
-        const li = document.createElement('li');
-        li.textContent = 
-        ul.appendChild(li);
+    var ul = document.querySelector('ul');
+    const li = document.createElement('li');
+    li.textContent = 
+    ul.appendChild(li);
 
-
+ // get stored data
     storage.push(store);
     localStorage.setItem("store", JSON.stringify(storage));
     console.log(localStorage.getItem("store"));
