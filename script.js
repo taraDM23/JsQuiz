@@ -15,11 +15,11 @@ start.addEventListener("click", startQuiz);
 function startQuiz() {
     start.style.display = "none";
     renderQuestion();
+    setTime();
     quiz.style.display = "block";
     header.style.display = "none";
     intro.style.display = "none";
     renderCounter();
-    setTime();
     TIMER = setInterval(renderCounter, 1000); // 1000ms = 1s
 }
 
@@ -31,7 +31,7 @@ let score = 0;
 let TIMER;
 let maintimer;
 var lastQuestion = questions.length - 1;
-var selectOptions = [];
+
 
 // Start timer
 function setTime() {
@@ -50,10 +50,10 @@ function renderQuestion() {
     let q = questions[runningQuestion];
 
     question.innerHTML = "<p>" + q.question + "</p>";
-    choiceA.innerHTML = q.option[0];
-    choiceB.innerHTML = q.option[1];
-    choiceC.innerHTML = q.option[2];
-    choiceD.innerHTML = q.option[3];
+    choiceA.innerHTML = q.choices[0];
+    choiceB.innerHTML = q.choices[1];
+    choiceC.innerHTML = q.choices[2];
+    choiceD.innerHTML = q.choices[3];
 }
 
 // counter 
@@ -75,9 +75,9 @@ function renderCounter() {
     }
 }
 
-// check Answer
-function checkAnswer(answer) {
-    if (answer != questions[runningQuestion].correct) {
+// Check Answer
+function checkAnswer(correct) {
+    if (correct != questions[runningQuestion].answer) {
         timeleft = timeleft - 10;
     }
     //right
@@ -91,7 +91,7 @@ function checkAnswer(answer) {
         Rendermodal();
     }
 }
-
+//Show score
 function Rendermodal() {
     var modal = document.getElementById("ShowScore");
     modal.style.display = "block";
@@ -125,9 +125,6 @@ submit_initial.addEventListener("click", function (store) {
     console.log(localStorage.getItem("store"));
 });
 
- 
-
-
 
 
 //Go to Home
@@ -149,5 +146,5 @@ Screen 3 - Highscore
             go back takes you to home screen.
 
 
-Home screen - view Highscores link -
+Home screen - view Highscores link 
      */

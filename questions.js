@@ -1,21 +1,36 @@
 var questions = [{
-    question: "Question 1: Why is this so hard:",
-    option: ["1: ping", "2: pong", "3: paddle", "4: pool"],
-    correct: 0
+    question: "Question 1: What are global variables? ",
+    choices: [
+    "A: Variables that are universally known", 
+    "B: Variables that can be used for all coding languages", 
+    "C: Variables available throughout the length of the code and have no scope.", 
+    "D: Variables available throughout the length of the code and have scope."
+    ],
+    answer: 3
 }, {
-    question: "Question 2: I wish I had a lot of money",
-    option: ["1: why!!?", "2: so poor", "3: need", "4: money"],
-    correct: 3
+    question: "Question 2: What is 'this' keyword in JavaScript?",
+    choices: [
+    "A: 'This' keyword refers to the console log from where it was called.", 
+    "B: 'This' keyword refers to the HTML from where it was called.", 
+    "C: 'This' keyword refers to the line from where it was called.", 
+    "D: 'This' keyword refers to the object from where it was called."
+    ],
+    answer: 3
 }, {
-    question: "Question 3: No no no no no no no",
-    option: ["1: stick", "2: to the", "3: stuff you", "4: know"],
-    correct: 1
+    question: "Question 3: What is NOT a type of Pop up boxe available in JavaScript?",
+    choices: ["A: prompt", "B: alert", "C: check", "D: confirm"],
+    answer: 2
 }, {
-    question: "Question 4: Potatos are awesome",
-    option: ["1: chips", "2: mashed", "3: wedges", "4: roast"],
-    correct: 1
+    question: "Question 4: What would be the result of 3+2+'7'?",
+    choices: ["A: 327", "B: 57", "C: 12", "D: 39"],
+    answer: 1
 }, {
-    question: "Question 5: What are JavaScript Cookies?",
-    option: ["1: js stored in a computer when the user visits the websites to store information", "2: Cookies made with flour, eggs and HTML", "3: Chocolate", "4: Test files stored in a computer when the user visits the websites to store information"],
-    correct: 3
+    question: "Question 5: Which symbol is used for comments in Javascript?",
+    choices: [
+    "A: // for Single line comments and /* */ for Multiline", 
+    "B: || for Single line comments and */ */ for Multiline",
+    "C: \\  for Single line comments and  /* */ for Multiline", 
+    "D: [] for Single line comments and  */ /* for Multiline"
+    ],
+    answer: 0
 }]
