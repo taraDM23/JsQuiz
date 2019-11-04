@@ -102,8 +102,9 @@ function Rendermodal() {
 
 //submit score and initial to local storage
 const submit_initial = document.getElementById("submit_initial")
-const id_initial = document.getElementById("initial")
-score = document.getElementById("score")
+const id_initial = document.getElementById("initial");
+const score = document.getElementById("score");
+const ul = document.querySelector('#ul');
 
 submit_initial.addEventListener("click", function (store) {
     var store = {
@@ -116,11 +117,10 @@ submit_initial.addEventListener("click", function (store) {
   
 
 // get stored data
-    var ul = document.querySelector('ul');
-        
+
     const li = document.createElement('li');
-        li.textContent = 
-        ul.appendChild(li);
+      //  li.textContent = 
+       // ul.appendChild(li);
 
  // get stored data
     storage.push(store);
