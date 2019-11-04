@@ -14,8 +14,8 @@ start.addEventListener("click", startQuiz);
 
 function startQuiz() {
     start.style.display = "none";
-    renderQuestion();
     setTime();
+    renderQuestion();
     quiz.style.display = "block";
     header.style.display = "none";
     intro.style.display = "none";
@@ -25,7 +25,7 @@ function startQuiz() {
 
 let runningQuestion = 0;
 let count = 0;
-const questionTime = 10;
+const questionTime = 15;
 var timeleft = 75;
 let score = 0;
 let TIMER;
@@ -114,11 +114,13 @@ submit_initial.addEventListener("click", function (store) {
     var storage = localStorage.getItem("store");
     console.log(storage)
   
-    // get stored data
+
+// get stored data
     var ul = document.querySelector('ul');
+        
     const li = document.createElement('li');
-    li.textContent = 
-    ul.appendChild(li);
+        li.textContent = 
+        ul.appendChild(li);
 
  // get stored data
     storage.push(store);
