@@ -28,9 +28,9 @@
       <h4 id="header">Coding Quiz Challenge</h4>
       <br />
       <p id="intro">
-        Answer these questions as fast as you can. The faster you are the higher
-        the score. Remember if you get an answer wrong or take too long you will
-        loose points! Good Luck!!
+        Answer JavaScript questions as fast as you can. <br> The faster you are the higher
+        your score. <br> Remember if you get an answer wrong or take too long you will
+        loose points! Answer them all before the timer runs out! <br>Good Luck!!
       </p>
       <br />
       <div class="row">
@@ -57,32 +57,29 @@
           <div id="counter"></div>
         </div>
         <div id="ShowScore" class="modal" style="display: none">
-          <div class="modal-content">
+        <div class="modal-content">
             <br />
             <br />
             <h4>All done!!</h4>
             <p>Your Score is:</p>
             <p id="score"></p>
+            <br />
+            <br />
+            <p>Add your initials and hit submit to save your score to the hall of fame!!</p>
+<div class="row" >
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center">
             <input type="text" id="initial" placeholder="Enter Initials" />
-            <input
-              type="button"
-              id="submit_initial"
-              value="Submit"
-              onclick=""
-            />
-            <br />
-            <br />
-            <!--
-    <div class="row" style="display: none">
-      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center">
-        <input type="button" id="highscorelist"><a href="highscore.html">Highscore</a>/>
-      </div>
-      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center">
-        <input type="button" id="clear-score"><a href="">Clear</a>/>
-        local storage_remove item
-      </div>
-    </div>
-      -->
+            <input type="button" id="submit_btn" value="Submit" onclick="" />
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center">
+         <input type="button" id="highscorelist" value="See the Hall of Fame" onclick="location.href='highscore.html';" /> 
+        </div>      
+</div>
+         <br />
+        <p>Dont want to save your score? Click Home to restart the quiz!</p>
+        <input type="button" id="home_btn" value="Home" onclick="location.href='index.html';" />
+        </div>
+        </div>
             <br />
             <br />
           </div>

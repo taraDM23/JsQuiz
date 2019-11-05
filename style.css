@@ -32,11 +32,21 @@ body {
     cursor: pointer;
 }
 
-#submit_initial {
+#submit_btn {
     text-align: center;
     background-color: purple;
     color: white;
-    padding: 2px;
+    padding: 5px;
+    margin-top: 5px;
+    border: 1px purple solid;
+}
+
+
+#highscorelist {
+    text-align: center;
+    background-color: purple;
+    color: white;
+    padding: 5px;
     margin-top: 5px;
     border: 1px purple solid;
 }

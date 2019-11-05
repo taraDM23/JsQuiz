@@ -26,7 +26,7 @@ function startQuiz() {
 let runningQuestion = 0;
 let count = 0;
 const questionTime = 15;
-var timeleft = 75;
+var timeleft = 77;
 let score = 0;
 let TIMER;
 let maintimer;
@@ -36,12 +36,13 @@ var lastQuestion = questions.length - 1;
 // Start timer
 function setTime() {
 
-    maintimer = setInterval(function function1() {
-
+    maintimer = setInterval(function countdown() {
         document.getElementById("Timer").innerHTML = "Time: " + timeleft + " seconds";
         timeleft -= 1;
-
     }, 1000);
+    if(runningQuestion == lastQuestion && count == 15){
+        clearInterval(maintimer);
+    }
 };
 
 
@@ -54,6 +55,8 @@ function renderQuestion() {
     choiceB.innerHTML = q.choices[1];
     choiceC.innerHTML = q.choices[2];
     choiceD.innerHTML = q.choices[3];
+    count = 0;
+    renderCounter();
 }
 
 // counter 
@@ -78,7 +81,7 @@ function renderCounter() {
 // Check Answer
 function checkAnswer(correct) {
     if (correct != questions[runningQuestion].answer) {
-        timeleft = timeleft - 10;
+        timeleft = timeleft - 15;
     }
     //right
     if (runningQuestion < lastQuestion) {
@@ -95,26 +98,38 @@ function checkAnswer(correct) {
 function Rendermodal() {
     var modal = document.getElementById("ShowScore");
     modal.style.display = "block";
-    score = document.getElementById("score");
-    score.innerHTML = timeleft;
+    DisplayScore = document.getElementById("score");
+    DisplayScore.innerHTML = timeleft;
     console.log(timeleft);
 }
 
+//Store Score
 //submit score and initial to local storage
-const submit_initial = document.getElementById("submit_initial")
+/* const submit_btn = document.getElementById("submit_btn")
 const id_initial = document.getElementById("initial");
-const scorage = document.getElementById("score");
 const ul = document.querySelector('#ul');
+const highscorelist_btn = document.getElementById("highscorelist");
+DisplayScore = document.getElementById("score");
 
-/* submit_initial.addEventListener("click", function (store) {
-    var store = {
-        initial: id_initial.value.trim(),
-        score: score.innerHTML = timeleft
+submit_btn.onclick = function () {   
+
+
+    if (id_initial && DisplayScore) {
+        localStorage.setItem ();
     }
-    console.log(store)
-    var storage = localStorage.getItem("store");
-    console.log(storage)
-  
+ */
+
+/*
+
+submit_btn.addEventListener("click", function (Storage) {   
+
+    if (initial && score) {
+        localStorage.setItem (initial,  score);
+    }
+ });
+
+ //for (let i = 0; i < localStorage.length; i++){
+ 
 
 // get stored data
 

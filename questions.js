@@ -6,7 +6,7 @@ var questions = [{
     "C: Variables available throughout the length of the code and have no scope.", 
     "D: Variables available throughout the length of the code and have scope."
     ],
-    answer: 3
+    answer: 2
 }, {
     question: "Question 2: What is 'this' keyword in JavaScript?",
     choices: [
