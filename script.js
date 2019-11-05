@@ -103,10 +103,10 @@ function Rendermodal() {
 //submit score and initial to local storage
 const submit_initial = document.getElementById("submit_initial")
 const id_initial = document.getElementById("initial");
-const score = document.getElementById("score");
+const scorage = document.getElementById("score");
 const ul = document.querySelector('#ul');
 
-submit_initial.addEventListener("click", function (store) {
+/* submit_initial.addEventListener("click", function (store) {
     var store = {
         initial: id_initial.value.trim(),
         score: score.innerHTML = timeleft
@@ -126,7 +126,7 @@ submit_initial.addEventListener("click", function (store) {
     storage.push(store);
     localStorage.setItem("store", JSON.stringify(storage));
     console.log(localStorage.getItem("store"));
-});
+}); */
 
 
 
