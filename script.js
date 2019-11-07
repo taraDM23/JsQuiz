@@ -10,6 +10,7 @@ const counter = document.getElementById("counter");
 const header = document.getElementById("header");
 const intro = document.getElementById("intro");
 
+
 start.addEventListener("click", startQuiz);
 
 function startQuiz() {
@@ -40,9 +41,9 @@ function setTime() {
         document.getElementById("Timer").innerHTML = "Time: " + timeleft + " seconds";
         timeleft -= 1;
     }, 1000);
-    if(runningQuestion == lastQuestion && count == 15){
-        clearInterval(maintimer);
-    }
+    /*  if (runningQuestion == lastQuestion && count == 15) {
+         clearInterval(maintimer);}
+      */
 };
 
 
@@ -104,51 +105,60 @@ function Rendermodal() {
 }
 
 //Store Score
+var HighScores = [];
+
+/* function createlist() {
+    console.log();
+    for (var i = 0; i < 15; i++) {
+        var score = JSON.parse(localStorage.getItem("scores"));
+        console.log(JSON.parse(localStorage.getItem("scores")))
+        var li = document.createElement("li");
+        li.textContent = score;
+        PastScore.append(li);
+        console.log(PastScore);
+    }
+} */
+
 //submit score and initial to local storage
-/* const submit_btn = document.getElementById("submit_btn")
+function GetItem() {
+    var storedscore = JSON.parse(localStorage.getItem("scores"));
+    console.log(JSON.parse(localStorage.getItem("scores")))
+    console.log(localStorage.getItem("scores"))
+
+    if (storedscore !== null) {
+        HighScores = storedscore;
+        console.log(HighScores);
+        console.log(storedscore)
+    }
+}
+
+function storeScores() {
+    localStorage.setItem("scores", JSON.stringify(HighScores));
+}
+
+//initials added
+
+const submit_btn = document.getElementById("submit_btn")
 const id_initial = document.getElementById("initial");
 const ul = document.querySelector('#ul');
 const highscorelist_btn = document.getElementById("highscorelist");
-DisplayScore = document.getElementById("score");
 
-submit_btn.onclick = function () {   
-
-
-    if (id_initial && DisplayScore) {
-        localStorage.setItem ();
+submit_btn.onclick = function() {
+    var store = {
+        initial: id_initial.value.trim(),
+        score: score.innerHTML = timeleft
     }
- */
-
-/*
-
-submit_btn.addEventListener("click", function (Storage) {   
-
-    if (initial && score) {
-        localStorage.setItem (initial,  score);
+    console.log(store)
+    if (store === "") {
+        return;
     }
- });
+    GetItem();
+    console.log(HighScores);
+    HighScores.push(store);
+    console.log(HighScores)
+    storeScores();
+}
 
- //for (let i = 0; i < localStorage.length; i++){
- 
-
-// get stored data
-
-    const li = document.createElement('li');
-      //  li.textContent = 
-       // ul.appendChild(li);
-
- // get stored data
-    storage.push(store);
-    localStorage.setItem("store", JSON.stringify(storage));
-    console.log(localStorage.getItem("store"));
-}); */
-
-
-
-//Go to Home
-//location.reload()
-
-//view highscore 
 
 /*
 Home screenSubmit button - on click event
@@ -164,5 +174,5 @@ Screen 3 - Highscore
             go back takes you to home screen.
 
 
-Home screen - view Highscores link 
+Home screen - view Highscores link
      */

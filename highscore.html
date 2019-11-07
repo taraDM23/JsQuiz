@@ -1,29 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
     <title>Tara's Quiz</title>
-  </head>
+</head>
 
-  <body>
+<body>
     <nav class="row" id="nav">
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
-        <h5 id="Home"><a href="index.html">Home</a></h5>
-      </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+            <h5 id="Home"><a href="index.html">Home</a></h5>
+        </div>
     </nav>
     <div id="container">
-      <h2>Past Scores</h2>
-      <ul></ul>
+        <h2>Past Scores</h2>
+        <ul id="PastScore"></ul>
     </div>
     <script src="script.js"></script>
-  </body>
+    <script src="script.js"></script>
+    <script>
+        function createlist() {
+            console.log();
+            for (var i = 0; i <
+                15; i++) {
+                var score = J SON.parse(localStorage.getItem("scores"));
+                console.log(JSON.parse(localStorage.getItem("scores"))) var li = d ocument.createElement("li");
+                li.textContent = s core;
+                PastScore.append(li);
+                console.log(PastScore);
+            }
+        }
+    </script>
+</body>
+
 </html>
