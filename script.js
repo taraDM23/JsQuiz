@@ -10,8 +10,9 @@ const counter = document.getElementById("counter");
 const header = document.getElementById("header");
 const intro = document.getElementById("intro");
 
-
-start.addEventListener("click", startQuiz);
+if (start !== null) {
+    start.addEventListener("click", startQuiz);
+}
 
 function startQuiz() {
     start.style.display = "none";
@@ -102,22 +103,11 @@ function Rendermodal() {
     DisplayScore = document.getElementById("score");
     DisplayScore.innerHTML = timeleft;
     console.log(timeleft);
+    console.log(window.location.href)
 }
 
 //Store Score
 var HighScores = [];
-
-/* function createlist() {
-    console.log();
-    for (var i = 0; i < 15; i++) {
-        var score = JSON.parse(localStorage.getItem("scores"));
-        console.log(JSON.parse(localStorage.getItem("scores")))
-        var li = document.createElement("li");
-        li.textContent = score;
-        PastScore.append(li);
-        console.log(PastScore);
-    }
-} */
 
 //submit score and initial to local storage
 function GetItem() {
@@ -143,22 +133,23 @@ const id_initial = document.getElementById("initial");
 const ul = document.querySelector('#ul');
 const highscorelist_btn = document.getElementById("highscorelist");
 
-submit_btn.onclick = function() {
-    var store = {
-        initial: id_initial.value.trim(),
-        score: score.innerHTML = timeleft
+if (start !== null) {
+    submit_btn.onclick = function() {
+        var store = {
+            initial: id_initial.value.trim(),
+            score: score.innerHTML = timeleft
+        }
+        console.log(store)
+        if (store === "") {
+            return;
+        }
+        GetItem();
+        console.log(HighScores);
+        HighScores.push(store);
+        console.log(HighScores)
+        storeScores();
     }
-    console.log(store)
-    if (store === "") {
-        return;
-    }
-    GetItem();
-    console.log(HighScores);
-    HighScores.push(store);
-    console.log(HighScores)
-    storeScores();
 }
-
 
 /*
 Home screenSubmit button - on click event
